@@ -14,6 +14,7 @@ struct TaskManagementView: View {
     
     @Binding private var taskManagementHeight: CGFloat
     @State private var isKeyboardActive = false
+    @State private var isScrollAtTop = true
     
     private let entity: TaskEntity?
     private let animation: Namespace.ID
@@ -60,9 +61,6 @@ struct TaskManagementView: View {
         }
         .onDisappear {
             unsubscribeFromKeyboardNotifications()
-            withAnimation(.easeInOut(duration: 0.2)) {
-                entity != nil ? updateTask() : nil
-            }
         }
         .onChange(of: isKeyboardActive) { _, newValue in
             if newValue == false, entity != nil {
@@ -83,15 +81,14 @@ struct TaskManagementView: View {
                 viewModel: viewModel)
                 .presentationDetents([.height(670)])
         }
-        .navigationTransition(
-            id: transitionID,
-            namespace: animation,
-            enable: entity != nil || viewModel.taskCreationFullScreen == .fullScreen)
+        .swipeToDismiss(isAtTop: $isScrollAtTop) {
+            onDismiss()
+        }
     }
     
     private var content: some View {
         VStack(spacing: 0) {
-            ScrollView {
+            TrackableScrollView(isAtTop: $isScrollAtTop) {
                 nameInput
                 
                 if entity != nil || viewModel.taskCreationFullScreen == .fullScreen {
@@ -139,7 +136,7 @@ struct TaskManagementView: View {
             .strikethrough(viewModel.check == .checked)
             
             .focused($titleFocused)
-            .immediateKeyboard(delay: (entity != nil || viewModel.taskCreationFullScreen == .fullScreen) ? 0.4 : 0)
+            .immediateKeyboard(delay: (entity != nil || viewModel.taskCreationFullScreen == .fullScreen) ? 0.1 : 0)
             .onAppear {
                 titleFocused = true
             }
@@ -249,7 +246,6 @@ struct TaskManagementView: View {
             guard !viewModel.nameText.isEmpty else { return }
             withAnimation {
                 if entity != nil /*|| viewModel.taskCreationFullScreen == .fullScreen*/ {
-                    updateTask()
                     hideKeyboard()
                 } else {
                     addTask()

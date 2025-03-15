@@ -59,6 +59,8 @@
 		63A092912D7C5F380026A64D /* ToastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A092902D7C5F340026A64D /* ToastViewModel.swift */; };
 		63A092942D7C60E40026A64D /* CoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A092932D7C60E00026A64D /* CoreDataProvider.swift */; };
 		63A092962D7C634E0026A64D /* TaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A092952D7C63470026A64D /* TaskService.swift */; };
+		63A3FE782D85917800FE4896 /* SwipeToDismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3FE772D85917200FE4896 /* SwipeToDismiss.swift */; };
+		63A3FE7F2D85945800FE4896 /* TrackableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3FE7D2D85945800FE4896 /* TrackableScrollView.swift */; };
 		63A5B6642D4937D100B0E408 /* TaskCalendarSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5B6632D4937D100B0E408 /* TaskCalendarSelectorView.swift */; };
 		63A5B6672D493C4200B0E408 /* TaskCustomCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5B6662D493C3700B0E408 /* TaskCustomCalendar.swift */; };
 		63A5B6692D49446800B0E408 /* TaskDateParamRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5B6682D49446800B0E408 /* TaskDateParamRow.swift */; };
@@ -164,6 +166,8 @@
 		63A092902D7C5F340026A64D /* ToastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastViewModel.swift; sourceTree = "<group>"; };
 		63A092932D7C60E00026A64D /* CoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataProvider.swift; sourceTree = "<group>"; };
 		63A092952D7C63470026A64D /* TaskService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskService.swift; sourceTree = "<group>"; };
+		63A3FE772D85917200FE4896 /* SwipeToDismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToDismiss.swift; sourceTree = "<group>"; };
+		63A3FE7D2D85945800FE4896 /* TrackableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackableScrollView.swift; sourceTree = "<group>"; };
 		63A5B6632D4937D100B0E408 /* TaskCalendarSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCalendarSelectorView.swift; sourceTree = "<group>"; };
 		63A5B6662D493C3700B0E408 /* TaskCustomCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCustomCalendar.swift; sourceTree = "<group>"; };
 		63A5B6682D49446800B0E408 /* TaskDateParamRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateParamRow.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 		632D0DD82D37E0990071684D /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
+				63A3FE772D85917200FE4896 /* SwipeToDismiss.swift */,
 				63E870E62D54F44500699091 /* ViewGlow.swift */,
 				632D0DD92D37E0A90071684D /* HeightReader.swift */,
 			);
@@ -584,6 +589,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		63A3FE7E2D85945800FE4896 /* TrackableScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				63A3FE7D2D85945800FE4896 /* TrackableScrollView.swift */,
+			);
+			path = TrackableScrollView;
+			sourceTree = "<group>";
+		};
 		63A5B6652D4939DB00B0E408 /* DateSelector */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,6 +622,7 @@
 		63BCD8AD2D7729460016950F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				63A3FE7E2D85945800FE4896 /* TrackableScrollView */,
 				63A092872D7BA02C0026A64D /* InternalNotifications */,
 				63BCD8B32D7B665C0016950F /* SearchBar */,
 				63BCD8AE2D7729730016950F /* AlertPopView */,
@@ -888,6 +902,7 @@
 				637B9F4E2D295B490010F13B /* MainViewModel.swift in Sources */,
 				63BCD8B52D7B666B0016950F /* SearchBar.swift in Sources */,
 				63F849462D38145E00E9D5CE /* TaskChecklistView.swift in Sources */,
+				63A3FE7F2D85945800FE4896 /* TrackableScrollView.swift in Sources */,
 				63AE657D2D71F9E6009A3541 /* SettingTaskCreateView.swift in Sources */,
 				63AE658A2D731A15009A3541 /* CustomNavBarContainerView.swift in Sources */,
 				6377871D2D75E99B006DE892 /* FullSwipeNavigationStack.swift in Sources */,
@@ -898,6 +913,7 @@
 				635FEF6D2D24B71C007FFBBA /* ToDoNotesApp.swift in Sources */,
 				637B9F662D2974E40010F13B /* FilterScrollView.swift in Sources */,
 				6338FFA92D7C9FE900E9E4C2 /* PreviewData.swift in Sources */,
+				63A3FE782D85917800FE4896 /* SwipeToDismiss.swift in Sources */,
 				632D0DDA2D37E0AE0071684D /* HeightReader.swift in Sources */,
 				63AE657F2D72172E009A3541 /* TaskCreationPageModel.swift in Sources */,
 				63AE65832D721AED009A3541 /* SettingAboutPageView.swift in Sources */,
